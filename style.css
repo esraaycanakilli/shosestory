@@ -1,0 +1,243 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --bgcolor :#161616
+}
+body{
+    background:var(--bgcolor);
+    overflow: hidden;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.header:before{
+    content: "ADİDAS";
+    z-index: -1;
+    position: absolute;
+    top: 58%;
+    left: 57%;
+    color:rgba(100,164,164,0.603);
+    font-size: 150px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    opacity: 0.1;
+}
+.header i{
+    color: white;
+    cursor: pointer;
+}
+.header p{
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 25px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.line{
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 4px;
+    margin-right: 4px;
+}
+.logo-two{
+    height: 4px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.col2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col2 h1{
+    color: white;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    margin: 25px 0;
+}
+.col2 p{
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    background-color: #E04848;
+    border-radius: 35px;
+    margin-top: 45px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 1s all ease;  
+}
+.btn:hover{
+    background-color: #7a191b;
+}
+.ring img{
+    width: 100%;
+    max-width: 500px;
+}
+#circle-ring{
+    padding-left: 130px;
+    padding-top: 60px;
+}
+.ring{
+    position: relative;/*içerisinde ki elemanlara absolute verilerek pozisyon verilir*/
+    width: 400px;
+    height: 400px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: -1;
+}
+.ring:before{
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid #fff12e;
+    border-right: 3px solid #fff12e;
+    border-radius: 50%;
+    z-index: -1;
+    animation: returnCircle 10s linear infinite;
+}
+.circle{
+    display: block; /*span etiketiyle blok seviyesinde çalışmak için yoksa çalışmaz*/
+    position: absolute; /*absolute sayesinde top left gibi değerlerle pozisyon verilir*/
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: return 10s linear infinite;
+    z-index: -1;
+}
+.circle:before{
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background-color:#fff12e;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 0 0 20px #fff12e;    
+}
+.ring-two{
+    position: absolute;
+    top: 13%;
+    left: 56%;
+    width: 500px;
+    height: 500px;
+    background: transparent;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+
+}
+.ring-two::before{
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-bottom: 3px solid #fff12e;
+    border-left: 3px solid #fff12e;
+    border-radius: 50%;
+    animation: returnCircle2 10s linear infinite;
+}
+.circle-two{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background-color:transparent;
+    transform-origin: left;
+    animation: return2 10s linear infinite;
+}
+.circle-two:before{
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background: #fff12e;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #fff12e;
+}
+
+
+
+
+
+
+@keyframes returnCircle{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+@keyframes return{
+    0%{
+        transform:rotate(45deg);
+    }
+    100%{
+        transform:rotate(405deg);
+    }
+
+}
+@keyframes returnCircle2{
+    0%{
+        transform:rotate(-45deg);
+    }
+    100%{
+        transform:rotate(-405deg);
+    }
+
+}
+@keyframes return2{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(-360deg);
+    }
+
+}
